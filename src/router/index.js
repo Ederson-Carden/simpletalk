@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Wzry from '../views/Wzry.vue'
 import Mine from '../views/Mine.vue'
+import Xqtd from '../views/Xqtd.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/wzry',
     name: 'Wzry',
     component: Wzry
+  },
+  {
+    path: '/xqtd',
+    name: 'Xqtd',
+    component: Xqtd
   },
 ]
 

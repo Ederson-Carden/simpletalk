@@ -104,6 +104,9 @@ data() {
     },
   },
   methods:{
+    handleclick(){
+      this.$router.push('/xqtd')
+    },
     handleclick1(){
       this.$router.push('/wzry')
     },
