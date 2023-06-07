@@ -17,7 +17,7 @@
                         <div style="position: absolute;"><img width="12" src="../assets/img/home.png" alt=""></div>
                         <!-- 头像 -->
                         <div class="cl11">
-                            <img width="60" src="../assets/img/nan.png" alt="">
+                            <img width="60" :src="item.imgURL" style="border-radius: 50%" alt="" />
                             <div class="cl111"><img width="15" src="../assets/img/mkf1.png" alt=""></div>
                         </div>
                         <!-- 名字 -->
@@ -39,7 +39,7 @@
                     v-show="((item.id)==(listid[0]))||((item.id)==(listid[1]))||((item.id)==(listid[2]))||((item.id)==(listid[3]))">
                         <!-- 头像 -->
                         <div class="cl11">
-                            <img width="60" src="../assets/img/nan.png" alt="">
+                            <img width="60" :src="item.imgURL" style="border-radius: 50%" alt="" />
                             <div class="cl111"><img width="15" src="../assets/img/mkf1.png" alt=""></div>
                         </div>
                         <!-- 名字 -->
@@ -122,7 +122,7 @@
                 v-show="(item.id)==(showid)">
                 <div style="display:flex;justify-content: space-between;">
                     <div>
-                        <img width="80" src="../assets/img/nan.png" alt="">
+                        <img width="80" :src="item.imgURL" style="border-radius: 50%" alt="" />
                     </div>
                     <div>
                         <div style="display:flex;align-items: center;">
@@ -147,9 +147,10 @@
         </div>
     </div>
 </template>
-
-<script>    
-export default {
+    
+    <script>
+    
+    export default {
     data() {
     return {
         show: false,
@@ -164,6 +165,7 @@ export default {
                 num:23,
                 num1:18,
                 gushi:'关注我吧。',
+                imgURL:require('../assets/img/瑶.png'),
             },
             {
                 id:2,
@@ -173,6 +175,7 @@ export default {
                 num:11,
                 num1:15,
                 gushi:'关注我吧。',
+                imgURL:require('../assets/img/cai.png'),
             },
             {
                 id:3,
@@ -182,6 +185,7 @@ export default {
                 num:455,
                 num1:154,
                 gushi:'关注我吧。',
+                imgURL:require('../assets/img/sun.png'),
             },
             {
                 id:4,
@@ -191,6 +195,7 @@ export default {
                 num:465,
                 num1:464,
                 gushi:'关注我吧。',
+                imgURL:require('../assets/img/nan.png'),
             },
         ]
     }
@@ -249,6 +254,6 @@ export default {
     <style scoped lang='less'>
     /* @import url(); 引入css类 */
     @import '../style/index.less';
-    @import '../style/page2.less';
+    @import '../style/wzry.less';
     
     </style>

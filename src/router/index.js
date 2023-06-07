@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Page2 from '../views/Page2.vue'
+import Wzry from '../views/Wzry.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +12,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/page2',
-    name: 'Page2',
-    component: Page2
+    path: '/wzry',
+    name: 'Wzry',
+    component: Wzry
   },
 ]
 

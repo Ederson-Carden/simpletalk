@@ -105,7 +105,7 @@ data() {
   },
   methods:{
     handleclick1(){
-      this.$router.push('/page2')
+      this.$router.push('/wzry')
     },
   }
 }
