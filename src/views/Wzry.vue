@@ -37,6 +37,7 @@
                     v-for="(item,id) in tableData" 
                     :key="'0'+id" 
                     v-show="((item.id)==(listid[0]))||((item.id)==(listid[1]))||((item.id)==(listid[2]))||((item.id)==(listid[3]))">
+                    <div>
                         <!-- 头像 -->
                         <div class="cl11">
                             <img width="60" :src="item.imgURL" style="border-radius: 50%" alt="" />
@@ -52,6 +53,7 @@
                             <img style="margin-right:3px" width="15" src="../assets/img/v.png" alt="">
                             {{item.text}}
                         </div>
+                    </div>
                     </div>
                     <!-- 上麦 -->
                     <div @click="up();" id="cl12" v-for="(item,id) in tableData" :key="'1'+id" v-show="(item.id)==1">

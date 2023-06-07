@@ -15,14 +15,14 @@
       <div class="c_t">
       <!-- 环形进度条 -->
         <div>
-          <van-circle fill="none" layer-color="#E1E1E1" color="#F57876" :clockwise="false" v-model="currentRate" :speed="50" :rate="75" size="280px" />
+          <van-circle fill="none" layer-color="#E1E1E1" color="#F57876" :clockwise="false" v-model="currentRate" :speed="50" :rate="67" size="280px" />
         </div>
         <!-- 进度条内容 -->
         <div class="c_t1">
-          <div>2月3日， 星期五</div>
+          <div>6月7日，星期三</div>
           <div style="font-size:20px;font-weight: 600;color: #F57876;">当前时间</div>
-          <div style="font-size:50px;font-weight: 700;color: #F57876;">08:30:40</div>
-          <div style="margin-bottom: 40;">还有15个房间未开</div>
+          <div style="font-size:50px;font-weight: 700;color: #F57876;">18:30:00</div>
+          <div style="margin-bottom: 40;">有15个聊天室正在聊天！！！</div>
         </div>
       </div>
       <div>
