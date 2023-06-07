@@ -155,7 +155,7 @@
     return {
         show: false,
         showid:'',
-        listid:[2],
+        listid:[2,3],
         tableData:[
             {
                 id:1,
