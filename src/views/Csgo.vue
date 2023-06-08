@@ -193,7 +193,7 @@
     },
     //生命周期 - 创建完成（访问当前this实例）
     created() {
-        this.userInfo = this.$store.state.userInfo
+        this.userInfo = JSON.parse(JSON.stringify(this.$store.state.userInfo))
         this.userInfo.id = 4
         this.userInfo.title = '枪龄2年'
         this.userInfo.text = '上古尊者'

@@ -12,10 +12,10 @@ const store = new Vuex.Store({
             id:null,
             name:'iKun',
             title:'练习时长两年半',
-            text:'聊天达人，会唱,跳,rap,还有篮球~~~~~~~',
+            text:'个人练习生，会唱,跳,rap,还有篮球~~~~~~~',
             num:465,
             num1:464,
-            gushi:'关注我吧。',
+            gushi:'喜欢我，就关注我吧。',
             imgURL:require('../assets/img/ikun.jpg'),
       }
     },

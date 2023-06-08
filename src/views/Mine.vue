@@ -13,7 +13,7 @@
         <button class="butt" style="text-align: center;">编辑资料</button>
       </div>
       <p style="font-size: 18px;font-weight: 600;margin-bottom: 20px;margin-top:10px">{{userInfo.name}}</p>
-      <p style="font-size: 28px;font-weight: 600;">23 <span style="margin-right:20px;font-size: 13px;font-weight: 400;">关注</span > 18 <span style="font-size: 13px;font-weight: 400;">粉丝</span></p>
+      <p style="font-size: 28px;font-weight: 600;">{{userInfo.num}} <span style="margin-right:20px;font-size: 13px;font-weight: 400;">关注</span > {{userInfo.num1}} <span style="font-size: 13px;font-weight: 400;">粉丝</span></p>
       <p style="margin-top:30px">00后</p>
       <p style="margin-top:10px">{{userInfo.title}}</p>
       <p style="margin-top:30px">{{userInfo.text}}</p>
@@ -51,6 +51,10 @@ data() {
 //生命周期 - 创建完成（访问当前this实例）
 created() {
   this.userInfo = JSON.parse(JSON.stringify(this.$store.state.userInfo))
+  this.userInfo.id = 1
+  this.userInfo.title = '练习时长两年半'
+        this.userInfo.text = '个人练习生，会唱,跳,rap,还有篮球~~~~~~~'
+        this.userInfo.gushi = '喜欢我，就关注我吧。'
 },
 //生命周期 - 挂载完成（访问DOM元素）
 mounted() {
