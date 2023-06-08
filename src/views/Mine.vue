@@ -7,16 +7,16 @@
         <button class="butt">去绑定</button>
       </div>
     </div>
-    <div class="center">
+    <div class="center" >
       <div class="c_t">
-        <div><img width="100" src="../assets/img/nan.png" alt=""></div>
+        <div><img width="100" :src="userInfo.imgURL" style="border-radius: 50%" alt=""></div>
         <button class="butt" style="text-align: center;">编辑资料</button>
       </div>
-      <p style="font-size: 18px;font-weight: 600;margin-bottom: 20px;margin-top:10px">李源</p>
+      <p style="font-size: 18px;font-weight: 600;margin-bottom: 20px;margin-top:10px">{{userInfo.name}}</p>
       <p style="font-size: 28px;font-weight: 600;">23 <span style="margin-right:20px;font-size: 13px;font-weight: 400;">关注</span > 18 <span style="font-size: 13px;font-weight: 400;">粉丝</span></p>
       <p style="margin-top:30px">00后</p>
-      <p style="margin-top:10px">专业划水20年</p>
-      <p style="margin-top:30px">聊天达人，请来黑我~~~~~~~</p>
+      <p style="margin-top:10px">{{userInfo.title}}</p>
+      <p style="margin-top:30px">{{userInfo.text}}</p>
       <div class="c_b" >
         <div>
           <div class="c_b1">
@@ -44,12 +44,13 @@
 <script>
 export default {
 data() {
-return {
+    return {
+      userInfo:{   }
 }
 },
 //生命周期 - 创建完成（访问当前this实例）
 created() {
-
+  this.userInfo = this.$store.state.userInfo
 },
 //生命周期 - 挂载完成（访问DOM元素）
 mounted() {

@@ -164,8 +164,8 @@
                 name:'鹿灵守心',
                 title:'农历3年',
                 text:'王者99星',
-                num:23,
-                num1:18,
+                num:46,
+                num1:22,
                 gushi:'关注我吧。',
                 imgURL:require('../assets/img/瑶.png'),
             },
@@ -174,8 +174,8 @@
                 name:'天籁弦音',
                 title:'农历1年',
                 text:'王者66星',
-                num:11,
-                num1:15,
+                num:16,
+                num1:686,
                 gushi:'关注我吧。',
                 imgURL:require('../assets/img/cai.png'),
             },
@@ -185,42 +185,37 @@
                 title:'农历2年',
                 text:'王者50星',
                 num:455,
-                num1:154,
+                num1:4566,
                 gushi:'关注我吧。',
                 imgURL:require('../assets/img/sun.png'),
             },
-            {
-                id:4,
-                name:'李源',
-                title:'农历12年',
-                text:'王者555星',
-                num:465,
-                num1:464,
-                gushi:'关注我吧。',
-                imgURL:require('../assets/img/nan.png'),
-            },
-        ]
+        ],
+        userInfo:{}
     }
     },
     //生命周期 - 创建完成（访问当前this实例）
     created() {
-    
+        this.userInfo = this.$store.state.userInfo
+        this.userInfo.id = 4
+        this.userInfo.title = '农历12年'
+        this.userInfo.text = '王者555星'
+        this.tableData.push(this.userInfo)
     },
     methods:{
         showPopup(options) {
           this.show = true;
           this.showid = options;
-          console.log(this.showid)
-        },
-        Toast(){
-            this.$toast('您是房主哦');
+                console.log(this.showid)
+ 
         },
         up(){
             // this.listid = this.listid.filter(item => item != options)
             this.list = this.listid.push(4)
             // this.show = false;
             console.log(this.listid)
-            document.getElementById('cl12').style.display="none";
+                document.getElementById('cl12').style.display = "none";
+                this.$store.commit("setPath")
+                console.log(this.$store.state.testid)
         },
         down(options){
             this.listid = this.listid.filter(item => item != options)

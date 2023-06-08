@@ -6,6 +6,7 @@ import Mine from '../views/Mine.vue'
 import Xqtd from '../views/Xqtd.vue'
 import Csgo from '../views/Csgo.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -35,7 +36,6 @@ const routes = [
     component: Csgo
   },
 ]
-
 const router = new VueRouter({
   routes
 })
