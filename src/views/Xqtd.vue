@@ -196,10 +196,11 @@ return {
 },
 //生命周期 - 创建完成（访问当前this实例）
 created() {
-    this.userInfo = this.$store.state.userInfo
+    this.userInfo = JSON.parse(JSON.stringify(this.$store.state.userInfo))
         this.userInfo.id = 1
         this.userInfo.title = '穹批3年'
-        this.userInfo.text = '50级'
+    this.userInfo.text = '50级'
+    this.userInfo.gushi = '铁道资深玩家'
         this.tableData.push(this.userInfo)
 },
 methods:{

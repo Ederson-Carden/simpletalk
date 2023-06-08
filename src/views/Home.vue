@@ -15,13 +15,13 @@
       <div class="c_t">
       <!-- 环形进度条 -->
         <div>
-          <van-circle fill="none" layer-color="#E1E1E1" color="#F57876" :clockwise="false" v-model="currentRate" :speed="50" :rate="67" size="280px" />
+          <van-circle fill="none" layer-color="#E1E1E1" color="#F57876" :clockwise="false" v-model="currentRate" :speed="50" :rate="currentRate" size="280px" />
         </div>
         <!-- 进度条内容 -->
         <div class="c_t1">
-          <div>6月7日，星期三</div>
+          <div>{{dateFormatYear(date)}}</div>
           <div style="font-size:20px;font-weight: 600;color: #F57876;">当前时间</div>
-          <div style="font-size:50px;font-weight: 700;color: #F57876;">18:30:00</div>
+          <div style="font-size:50px;font-weight: 700;color: #F57876;">{{dateFormatTime(date)}}</div>
           <div style="margin-bottom: 40;">有15个聊天室正在聊天！！！</div>
         </div>
       </div>
@@ -67,13 +67,10 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
 data() {
     return {
-      currentRate: 0,
+      currentRate: 10,
       tabledate:[
         {
           num: 3,
@@ -92,10 +89,11 @@ data() {
         },
         {
           num: 4,
-          title: '纯聊天！！！！',
+          title: 'csgo连麦',
           num1:8,
         }
-      ]
+      ],
+      date:new Date()
     }
   },
   computed: {
@@ -112,8 +110,44 @@ data() {
     },
     to(){
       this.$router.push('/csgo')
+    },
+    //格式化年月日
+    dateFormatYear(time) {
+          var date=new Date(time);
+          var year=date.getFullYear();
+          /* 在日期格式中，月份是从0开始的，因此要加0
+          * 使用三元表达式在小于10的前面加0，以达到格式统一  如 09:11:05
+          * */
+          var month= date.getMonth()+1<10 ? "0"+(date.getMonth()+1) : date.getMonth()+1;
+          var day=date.getDate()<10 ? "0"+date.getDate() : date.getDate();
+          // 拼接
+          return year+"年"+month+"月"+day+"日";
+    },
+    //格式化时分秒
+    dateFormatTime(time) { 
+      var date=new Date(time);
+      var hours=date.getHours()<10 ? "0"+date.getHours() : date.getHours();
+      var minutes=date.getMinutes()<10 ? "0"+date.getMinutes() : date.getMinutes();
+      var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+      //计算当前时间在一天里的占比
+      this.currentRate = (date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds()) / 3600 / 24 * 100
+      // console.log(this.currentRate)
+      // console.log(date)
+      return hours + ":" + minutes + ":" + seconds;
     }
-  }
+  },
+  mounted() {
+          //显示当前日期时间
+          let _this = this// 声明一个变量指向Vue实例this，保证作用域一致
+          this.timer = setInterval(() => {
+           _this.date = new Date(); // 修改数据date
+           }, 1000)
+       },
+      beforeDestroy() {
+       if (this.timer) {
+        clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
+      }
+      }
 }
 </script>
 

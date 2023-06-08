@@ -187,22 +187,18 @@
                 gushi:'喜欢杀游戏里的小鸡。',
                 imgURL:require('../assets/img/fei2.png'),
             },
-            {
-                id:4,
-                name:'这把eco',
-                title:'枪龄2年',
-                text:'上古尊者',
-                num:46,
-                num1:364,
-                gushi:'又菜又爱玩的AK小子。',
-                imgURL:require('../assets/img/nan.png'),
-            },
-        ]
+        ],
+        userInfo:{}
     }
     },
     //生命周期 - 创建完成（访问当前this实例）
     created() {
-    
+        this.userInfo = this.$store.state.userInfo
+        this.userInfo.id = 4
+        this.userInfo.title = '枪龄2年'
+        this.userInfo.text = '上古尊者'
+        this.userInfo.gushi = '又菜又爱玩的AK小子。'
+        this.tableData.push(this.userInfo)
     },
     methods:{
         showPopup(options) {

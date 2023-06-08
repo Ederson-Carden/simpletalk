@@ -166,7 +166,7 @@
                 text:'王者99星',
                 num:46,
                 num1:22,
-                gushi:'关注我吧。',
+                gushi:'过去生于未来～ ',
                 imgURL:require('../assets/img/瑶.png'),
             },
             {
@@ -176,7 +176,7 @@
                 text:'王者66星',
                 num:16,
                 num1:686,
-                gushi:'关注我吧。',
+                gushi:'喊一声加油，你敢答应吗？',
                 imgURL:require('../assets/img/cai.png'),
             },
             {
@@ -186,7 +186,7 @@
                 text:'王者50星',
                 num:455,
                 num1:4566,
-                gushi:'关注我吧。',
+                gushi:'人家这么可爱，当然是男孩子了。',
                 imgURL:require('../assets/img/sun.png'),
             },
         ],
@@ -195,10 +195,11 @@
     },
     //生命周期 - 创建完成（访问当前this实例）
     created() {
-        this.userInfo = this.$store.state.userInfo
+        this.userInfo =  JSON.parse(JSON.stringify(this.$store.state.userInfo))
         this.userInfo.id = 4
         this.userInfo.title = '农历12年'
         this.userInfo.text = '王者555星'
+        this.userInfo.gushi = '炸鱼选手'
         this.tableData.push(this.userInfo)
     },
     methods:{
