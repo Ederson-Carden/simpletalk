@@ -17,7 +17,7 @@
                     <div style="position: absolute;"><img width="12" src="../assets/img/home.png" alt=""></div>
                     <!-- 头像 -->
                     <div class="cl11">
-                        <img width="60" src="../assets/img/nan.png" alt="">
+                        <img width="60" :src="item.imgURL" style="border-radius: 50%" alt="">
                         <div class="cl111"><img width="15" src="../assets/img/mkf1.png" alt=""></div>
                     </div>
                     <!-- 名字 -->
@@ -108,7 +108,7 @@
                 <p>静音</p>
             </div>
             <div class="xia" @click="back()">
-                下麦
+                下播
             </div>
         </div>
     </div>
@@ -161,16 +161,6 @@ return {
     listid:[2,3,4],
     tableData:[
         {
-            id:1,
-            name:'李源',
-            title:'穹批3年',
-            text:'50级',
-            num:23,
-            num1:18,
-            imgURL:require('../assets/img/nan.png'),
-            gushi:'关注我吧！',
-        },
-        {
             id:2,
             name:'希儿',
             title:'穹批1年',
@@ -200,12 +190,17 @@ return {
             imgURL:require('../assets/img/景元.gif'),
             gushi:'煌煌威灵，尊吾敕令',
         },
-    ]
+    ],
+    userInfo:{}
 }
 },
 //生命周期 - 创建完成（访问当前this实例）
 created() {
-
+    this.userInfo = this.$store.state.userInfo
+        this.userInfo.id = 1
+        this.userInfo.title = '穹批3年'
+        this.userInfo.text = '50级'
+        this.tableData.push(this.userInfo)
 },
 methods:{
     showPopup(options) {
@@ -222,7 +217,7 @@ methods:{
         console.log(this.listid)
     },
     back(){
-        this.$router.push('/')
+            this.$router.push('/')
     },
     jingyin(){
         document.getElementById('c_f_img').style.display="none";
