@@ -104,9 +104,15 @@ data() {
     },
   },
   methods:{
+    handleclick(){
+      this.$router.push('/xqtd')
+    },
     handleclick1(){
       this.$router.push('/wzry')
     },
+    to(){
+      this.$router.push('/csgo')
+    }
   }
 }
 </script>
